@@ -32,8 +32,8 @@
 | Категория | Технология | Назначение |
 | :--- | :--- | :--- |
 | **Backend** | Java 17+, Spring Boot, Spring Security | Основной фреймворк и бизнес-логика. |
-| **Frontend** |	React (JS/JSX)	SPA, стильный современный интерфейс.
-| **Styling** |	Styled Components, Framer Motion	Современная CSS-in-JS, плавные анимации.
+| **Frontend** |	React (JS/JSX)	SPA | Стильный современный интерфейс.
+| **Styling** |	Styled Components, Framer Motion	| Современная CSS-in-JS, плавные анимации.
 | **База Данных** | PostgreSQL/MySQL | Реляционная СУБД для хранения данных. |
 | **ORM/Persistence** | Spring Data JPA, Hibernate | Взаимодействие с базой данных. |
 | **Миграции БД** | Liquibase | Управление версиями схемы базы данных. |
