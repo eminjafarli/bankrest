@@ -57,7 +57,7 @@ git clone https://github.com/eminjafarli/bankrest.git
 
 ```bash
 cd bankrest-frontend
-docker compose up --build -d
+docker-compose up --build
 ```
 
 > **Примечание:** При запуске приложение автоматически выполнит все миграции базы данных через **Liquibase**, гарантируя, что схема БД актуальна.
