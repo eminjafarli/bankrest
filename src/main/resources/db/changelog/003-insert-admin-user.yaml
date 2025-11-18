@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-insert-admin-user
+      author: you
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "admin"
+              - column:
+                  name: name
+                  value: "Admin"
+              - column:
+                  name: password
+                  value: "$2a$10$egy1YIu0t/d9kY4rYzL3kun.TggH6xZw.M2P9k5UmIPfmyv.XgDDa"
+              - column:
+                  name: role
+                  value: "ADMIN"
