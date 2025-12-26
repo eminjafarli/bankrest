@@ -1,81 +1,93 @@
-# 💳 Система Управления Банковскими Картами
+# 💳 Bank Card Management System
 
-## Описание Проекта
+## Project Description
 
-Цель проекта — создать современную, безопасную и масштабируемую Full-Stack платформу для симуляции ключевых операций с банковскими картами. Проект демонстрирует лучшие практики в области разработки, включая использование микросервисной архитектуры (логически разделенные Backend/Frontend), безопасность (JWT, Spring Security) и автоматизацию инфраструктуры (Docker, Liquibase).
+The goal of this project is to create a modern, secure, and scalable **Full-Stack platform** for simulating key operations with bank cards. The project demonstrates best practices in software development, including the use of **microservice architecture** (logically separated Backend/Frontend), **security** (JWT, Spring Security), and **infrastructure automation** (Docker, Liquibase).
 
-## ✅ Ключевые Возможности API
+---
 
-### 🛡️ Безопасность и Аутентификация
+## ✅ Key API Features
 
-  * **Аутентификация/Авторизация:** Реализовано через **Spring Security** с использованием **JWT** (JSON Web Tokens).
-  * **Ролевой Доступ:** Четкое разделение прав между ролями `ADMIN` и `USER`.
-  * **Шифрование данных:** Номера карт и CVV хранятся в базе данных в зашифрованном виде.
-  * **Маскирование:** Номера карт отображаются пользователям в маскированном формате (например, `**** **** **** 1234`).
+### 🛡️ Security and Authentication
+* **Authentication/Authorization:** Implemented via **Spring Security** using **JWT** (JSON Web Tokens).
+* **Role-Based Access:** Clear separation of rights between `ADMIN` and `USER` roles.
+* **Data Encryption:** Card numbers and CVVs are stored in the database in encrypted form.
+* **Masking:** Card numbers are displayed to users in a masked format (e.g., `**** **** **** 1234`).
 
-### 👤 Функционал Пользователя (`USER`)
+### 👤 User Functionality (`USER`)
+* View a list of own cards with filtering and pagination.
+* Check own card balance.
+* Transfer funds between own cards.
+* Request card blocking.
+* Create a new card.
 
-  * Просмотр списка своих карт с фильтрацией и пагинацией.
-  * Проверка баланса своей карты.
-  * Перевод средств между собственными картами.
-  * Запрос на блокировку карты.
-  * Создание новой карты.
+### 👑 Admin Functionality (`ADMIN`)
+* Full CRUD (create, read, update, delete) for all cards in the system.
+* Manage card statuses (Activation, Blocking).
+* Manage users (view, update, delete).
 
-### 👑 Функционал Администратора (`ADMIN`)
+---
 
-  * Полный CRUD (создание, просмотр, обновление, удаление) для всех карт в системе.
-  * Управление статусами карт (Активация, Блокировка).
-  * Управление пользователями (просмотр, обновление, удаление).
+## 💡 Tech Stack
 
-## 💡 Технологический Стек
-
-| Категория | Технология | Назначение |
+| Category | Technology | Purpose |
 | :--- | :--- | :--- |
-| **Backend** | Java 17+, Spring Boot, Spring Security | Основной фреймворк и бизнес-логика. |
-| **Frontend** |	React (JS/JSX)	SPA | Стильный современный интерфейс.
-| **Styling** |	Styled Components, Framer Motion	| Современная CSS-in-JS, плавные анимации.
-| **База Данных** | PostgreSQL/MySQL | Реляционная СУБД для хранения данных. |
-| **ORM/Persistence** | Spring Data JPA, Hibernate | Взаимодействие с базой данных. |
-| **Миграции БД** | Liquibase | Управление версиями схемы базы данных. |
-| **Инфраструктура** | Docker, Docker Compose | Легковесное развертывание dev-среды. |
-| **Документация** | Swagger UI / OpenAPI | Автоматическая интерактивная документация API. |
-| **Тестирование** | JUnit 5, Mockito | Юнит-тестирование ключевой бизнес-логики. |
+| **Backend** | Java 17+, Spring Boot, Spring Security | Core framework and business logic. |
+| **Frontend** | React (JS/JSX) SPA | Stylish modern interface. |
+| **Styling** | Styled Components, Framer Motion | Modern CSS-in-JS, smooth animations. |
+| **Database** | PostgreSQL/MySQL | Relational RDBMS for data storage. |
+| **ORM** | Spring Data JPA, Hibernate | Database interaction. |
+| **Migrations** | Liquibase | Database schema version control. |
+| **Infrastructure** | Docker, Docker Compose | Lightweight dev environment deployment. |
+| **Docs** | Swagger UI / OpenAPI | Automated interactive API documentation. |
+| **Testing** | JUnit 5, Mockito | Unit testing of key business logic. |
 
-## 🛠️ Запуск Проекта
+---
 
-Для запуска проекта вам потребуется установленный **Docker** и **Docker Compose**.
+## 🛠️ Project Setup
 
-### 1\. Клонирование репозитория
+To run the project, you will need **Docker** and **Docker Compose** installed on your machine.
+
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/eminjafarli/bankrest.git
+git clone [https://github.com/eminjafarli/bankrest.git](https://github.com/eminjafarli/bankrest.git)
+
+### 2. Build and Run
+
 ```
 
-### 2\. Сборка и Запуск
-
-Проект настроен для запуска в Docker Compose. Эта команда соберет Docker-образ приложения, запустит контейнер PostgreSQL и свяжет их.
+The project is configured to run using Docker Compose. This command will build the application Docker image, start the PostgreSQL container, and link them.
 
 ```bash
 cd bankrest-frontend
 docker-compose up --build
+
 ```
 
-> **Примечание:** При запуске приложение автоматически выполнит все миграции базы данных через **Liquibase**, гарантируя, что схема БД актуальна.
+> **Note:** Upon startup, the application will automatically execute all database migrations via **Liquibase**, ensuring the DB schema is up to date.
 
-## 📚 Документация API (Swagger UI)
+---
 
-Интерактивная документация API доступна через Swagger UI.
+## 📚 API Documentation (Swagger UI)
 
-  * **Swagger UI:** `http://localhost:8080/swagger-ui.html`
+Once the application is running, interactive API documentation is available via Swagger UI:
 
------
+* **URL:** `http://localhost:8080/swagger-ui.html`
 
-## 🧪 Тестирование
+---
 
-### Юнит-тесты
+## 🧪 Testing
 
-Для запуска юнит-тестов (например, для классов которые мы покрыли с помощью **Mockito**):
+### Unit Tests
+
+To run unit tests (e.g., for classes covered using **Mockito**):
 
 ```bash
 ./mvnw test
+
+```
+
+```
+
 ```
