@@ -1,4 +1,4 @@
-# 💳 Bank Card Management System
+# 💳 Card Management System
 
 ## Project Description
 
