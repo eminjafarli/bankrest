@@ -53,9 +53,9 @@ To run the project, you will need **Docker** and **Docker Compose** installed on
 ```bash
 git clone [https://github.com/eminjafarli/bankrest.git](https://github.com/eminjafarli/bankrest.git)
 
-### 2. Build and Run
-
 ```
+
+### 2. Build and Run
 
 The project is configured to run using Docker Compose. This command will build the application Docker image, start the PostgreSQL container, and link them.
 
